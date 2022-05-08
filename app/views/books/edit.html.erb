@@ -11,17 +11,17 @@
 <% end %>
 </div>
 
-<%= form_with model: @book, url: book_path(@book.id), local: true, method: :patch do |f| %>
-  <div>
+<%= form_with model: @book, url: book_path(@book.id), local: true, method: :patch, id: "form-area" do |f| %>
+  <div class="form">
     <%= f.label :Title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "text" %>
   </div>
-  <div>
+  <div class="form">
     <%= f.label :Body %>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, rows: 6, class: "text" %>
   </div>
-  <div>
-    <%= f.submit "Create Book" %>
+  <div class="form">
+    <%= f.submit "Update Book", class: "submit" %>
   </div>
 <% end %>
 <%= link_to "Show", book_path(@book.id) %> | <%= link_to "Back", books_path %>
